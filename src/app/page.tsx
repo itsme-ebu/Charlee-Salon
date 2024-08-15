@@ -1,113 +1,106 @@
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
+import decor from "../../public/decor.png";
+import hero from "../../public/Hero Collage.webp";
+import hero_mobile from "../../public/Hero Collage MOBILE.webp";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import imgLinks from "@/constents/slideImgs";
+import { Facebook, Instagram } from "lucide-react";
+import TextBanner from "@/components/TextBanner";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <main className="w-full h-full">
+      <Navbar />
+      <section className="w-full h-[40vh] max-md:pb-5 md:h-screen flex justify-center flex-col items-center ">
+        <h1 className="text-4xl md:text-[4.8rem] boldee leading-tight tracking-widest text-center uppercase">
+          Life ain&apos;t <br />
+          perfect but <br />
+          your{" "}
+          <span className=" relative">
+            hair{" "}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={decor}
+              alt="saloon"
+              fill
+              objectFit="contain"
+              objectPosition="50% 100%"
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+          </span>{" "}
+          <br />
+          can be.
+        </h1>
+        <Button variant="outln" size="xl" className="mt-10">
+          VIEW OUR MENU
+        </Button>
+      </section>
+      <section className="w-full h-full">
+        <Image src={hero} alt="saloon" className="max-md:hidden" />
+        <Image src={hero_mobile} alt="saloon" className="md:hidden" />
+      </section>
+      <section className="w-full h-full py-16 relative flex justify-center items-center flex-col text-center text-white">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/img/5b2cffb695f0a079a9ecc306_pattern-v1.webp"
+          alt="saloon"
+          fill
+          objectFit="cover"
+          className="-z-10"
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className="w-full h-full bg-[#000000]  absolute top-0 left-0 -z-20"></div>
+        <h2 className=" text-lg tracking-wider boldee">ABOUT THE CHARLEE</h2>
+        <p className="md:w-[60%] text-xl md:text-2xl px-1 pierpont my-6 md:my-12">
+          Located in historic downtown Lancaster, THE CHARLEE offers big city
+          experience in a relaxed, modern salon. Our technicians are masters of
+          their craft—with specialized areas of expertise—and educate every
+          client on how to maintain their look at home. We deliver consistent
+          results and personalized service in a welcoming atmosphere.
+        </p>
+        <Button variant="whiteOutln" size="xl">
+          CHECK IT OUT
+        </Button>
+      </section>
+      <section className="w-full h-full relative">
+        <Image src="/img/white-bg.webp" alt="saloon" fill />
+        <div className="md:w-[75%] relative h-full mx-auto md:py-20">
+          <Image
+            src="/img/5b32a42f6f941a63e364b8c1_Hello Gorgeous.png"
+            width={160}
+            height={160}
+            className=" absolute top-10 -left-32 z-10 -rotate-12 max-md:hidden"
+            alt="saloon"
+          />
+          <Carousel>
+            <CarouselContent>
+              {imgLinks.map((links, index) => (
+                <CarouselItem key={index}>
+                  <div className="w-full h-[30vh] md:h-screen relative">
+                    <Image
+                      src={links.link}
+                      alt="sal"
+                      fill
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+      <TextBanner />
+      <Footer />
     </main>
   );
 }
