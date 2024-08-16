@@ -1,5 +1,7 @@
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Team from "@/components/Team";
 import Image from "next/image";
 
 function page() {
@@ -80,11 +82,16 @@ function page() {
             className=" absolute top-10 -left-32 z-10 -rotate-12 max-md:hidden"
             alt="saloon"
           />
-          <video
-            src="https://www.youtube.com/watch?v=vJQ8zdo6ljY"
+          <iframe
+            width="100%"
+            height="100%"
             className="w-full h-[40vh] md:h-[90vh]"
-            controls
-          ></video>
+            src="https://www.youtube.com/embed/vJQ8zdo6ljY"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
       <section className="w-full h-full py-16 relative flex justify-center items-center flex-col text-center text-white">
@@ -101,7 +108,7 @@ function page() {
         </h2>
         <div className="my-20 md:w-[90%] mx-auto max-md:flex-col max-md:gap-10 flex justify-around">
           <div className="text-center px-10">
-            <p className="text-2xl px-5 py-2 mx-auto w-fit rounded-full border-2">
+            <p className="text-2xl w-10 h-10 mx-auto rounded-full border-2">
               1
             </p>
             <h2 className=" text-lg my-8 tracking-wider boldee">
@@ -113,7 +120,7 @@ function page() {
             </p>
           </div>
           <div className="text-center px-10">
-            <p className="text-2xl px-5 py-2 mx-auto w-fit rounded-full border-2">
+            <p className="text-2xl w-10 h-10 mx-auto rounded-full border-2">
               2
             </p>
             <h2 className=" text-lg my-8 tracking-wider boldee">
@@ -125,7 +132,7 @@ function page() {
             </p>
           </div>
           <div className="text-center px-10">
-            <p className="text-2xl px-5 py-2 mx-auto w-fit rounded-full border-2">
+            <p className="text-2xl w-10 h-10 mx-auto rounded-full border-2">
               3
             </p>
             <h2 className=" text-lg my-8 tracking-wider boldee">
@@ -138,6 +145,8 @@ function page() {
           </div>
         </div>
       </section>
+      <Team />
+      <Footer />
     </main>
   );
 }
