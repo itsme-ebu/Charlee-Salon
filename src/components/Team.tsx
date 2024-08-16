@@ -10,7 +10,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { peoples } from "@/constents/peoples";
 import Image from "next/image";
 import { Button } from "./ui/button";
-
+interface TabContent {
+  Bio?: string;
+  Education?: string[];
+  Expertise?: string[];
+  "Fav. Product"?: string;
+  "Pro Tip"?: string;
+  "Around Town"?: string;
+}
 function Team() {
   return (
     <section className="md:w-[90%] w-full mx-auto h-full py-10 flex justify-around flex-wrap gap-10 ">
@@ -128,7 +135,7 @@ function Team() {
                               value={tab}
                               className="w-full pierpont text-base p-5 max-md:mt-8"
                             >
-                              {people.tabs[0][tab]}
+                              {people.tabs[0][tab as keyof TabContent]}
                             </TabsContent>
                           );
                         }

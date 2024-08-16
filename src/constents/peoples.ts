@@ -5,7 +5,6 @@ interface TabContent {
   "Fav. Product"?: string;
   "Pro Tip"?: string;
   "Around Town"?: string;
-  tab?: string;
 }
 
 interface Person {
